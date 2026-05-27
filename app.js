@@ -6,6 +6,11 @@ let currentStep = 0;
 let branch = null; // track gateway path ('svieti', 'blika', 'nebliká')
 let startAnswered = false; // whether the initial water question was answered
 
+// Function to scroll to top of step-container
+function scrollToTop() {
+  stepContainer.scrollTop = 0;
+}
+
 function renderStep() {
   // If at the very start and user hasn't answered the water question, show initial GTW
   if (currentStep === 0 && !startAnswered) {
@@ -24,6 +29,8 @@ function renderStep() {
     // Hide main navigation while deciding
     prevBtn.style.display = 'none';
     nextBtn.style.display = 'none';
+
+    scrollToTop();
 
     document.getElementById('start-yes').addEventListener('click', () => {
       startAnswered = true;
@@ -158,6 +165,9 @@ function renderStep() {
   if (currentStep < 3 || currentStep > 6) {
     branch = null;
   }
+
+  // Scroll to top after rendering
+  scrollToTop();
 }
 
 prevBtn.addEventListener('click', () => {
