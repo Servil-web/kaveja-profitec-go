@@ -40,7 +40,7 @@ body{
 .container{
   width:100%;
   max-width:960px;
-  background:rgba(15, 17, 19, 0.3);
+  background:rgba(15, 17, 19, 0.7);
   border-radius:12px;
   box-shadow:0 8px 30px rgba(2,6,23,0.08);
   padding:12px;
