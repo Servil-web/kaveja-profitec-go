@@ -1,0 +1,197 @@
+@font-face{
+  font-family: 'Wolf2';
+  src: local('Wolf2'), url('./fonts/wolf2.woff2') format('woff2');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Add modern, responsive styles for the coffee manual app */
+:root{
+  --bg: #0b0b0c;      /* very dark gray */
+  --card: #0f1113;    /* near black card */
+  --accent: #bfc6cc;  /* soft light gray */
+  --accent-2: #e6e9eb;/* almost white for headings */
+  --muted: #94a1a8;   /* muted gray for descriptions */
+  --text: #e7eef6;    /* main text color */
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+
+html,body{height:100%}
+body{
+  /* white base with the provided image on top */
+  background: #ffffff url('resources/go-black.jpg') no-repeat center center / cover;
+  font-family: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  color:var(--text);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:36px;
+}
+
+.container{
+  width:100%;
+  max-width:960px;
+  background:var(--card);
+  border-radius:14px;
+  box-shadow:0 8px 30px rgba(2,6,23,0.08);
+  padding:32px;
+  border:1px solid rgba(15,23,42,0.03);
+}
+
+h1{
+  font-size:1.75rem;
+  margin-bottom:16px;
+  text-align:center;
+  color:var(--accent-2);
+}
+
+#step-container{
+  padding:18px;
+  border-radius:10px;
+  background:linear-gradient(180deg, rgba(11,17,42,0.02), rgba(11,17,42,0.01));
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:8px;
+}
+
+h2{
+  font-size:1.35rem;
+  margin-bottom:10px;
+  text-align:center;
+}
+
+.step-photo{
+  display:block;
+  width:100%;
+  max-width:820px;
+  max-height:520px;
+  object-fit:cover;
+  border-radius:10px;
+  box-shadow:0 6px 20px rgba(2,6,23,0.06);
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+
+.step-photo:hover{transform:scale(1.02);box-shadow:0 10px 30px rgba(2,6,23,0.09)}
+
+.image-pair{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  justify-content:center;
+  width:100%;
+}
+
+.image-pair .step-photo{
+  max-width:48%;
+  max-height:400px;
+  flex:1 1 45%;
+}
+
+/* When 3 images, keep them in a row */
+.image-pair .step-photo:nth-child(n+3){
+  flex:1 1 30%;
+  max-width:32%;
+}
+
+p{
+  color:var(--muted);
+  line-height:1.5;
+  text-align:center;
+  padding:0 6px;
+}
+
+.step-count{
+  text-align:center;
+  font-size:0.9rem;
+  color:var(--muted);
+  margin-top:6px;
+}
+
+.navigation{
+  display:flex;
+  gap:12px;
+  justify-content:center;
+  margin-top:16px;
+}
+
+button{
+  appearance:none;
+  -webkit-appearance:none;
+  border:0;
+  cursor:pointer;
+  padding:14px 24px;
+  border-radius:10px;
+  font-size:1rem;
+  font-weight:600;
+  color:var(--text);
+  background:linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
+  border:1px solid rgba(255,255,255,0.06);
+  box-shadow:0 6px 18px rgba(2,6,23,0.18);
+  transition:transform .08s ease, opacity .12s ease;
+}
+
+button#prev-btn{
+  background:transparent;
+  color:var(--muted);
+  border:1px solid rgba(255,255,255,0.04);
+  box-shadow:none;
+}
+
+button:disabled{
+  opacity:0.45;
+  cursor:not-allowed;
+  transform:none;
+}
+
+button:not(:disabled):active{transform:translateY(1px)}
+
+/* Small screens */
+@media (max-width:520px){
+  body{padding:12px}
+  .container{padding:14px}
+  h1{font-size:1.25rem}
+  h2{font-size:1.1rem}
+  .step-photo{max-height:260px}
+  button{padding:12px 16px}
+  .image-pair{flex-direction:column;align-items:center}
+  .image-pair .step-photo,.image-pair .step-photo:nth-child(n+3){max-width:100%;flex:1 1 100%}
+}
+
+/* Make images look good even if missing (fallback handled via onerror in HTML) */
+.step-photo[src*="placeholder"]{filter:grayscale(20%);}
+
+/* Accessibility: focus states */
+button:focus{outline:3px solid rgba(139,92,246,0.18);outline-offset:2px}
+
+/* Gateway option with image above button */
+.gateway-buttons{
+  display:flex;
+  flex-wrap:wrap;
+  gap:16px;
+  justify-content:center;
+}
+
+.gateway-option{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:8px;
+  flex:1 1 28%;
+  max-width:500px;
+}
+
+.gateway-img{
+  width:100%;
+  max-height:560px;
+  object-fit:cover;
+  border-radius:8px;
+}
+
+/* Utility: center content when there's little content */
+.container:empty{min-height:240px;display:flex;align-items:center;justify-content:center}
