@@ -21,12 +21,12 @@ const steps = [
     image: null
   },
   {
-    title: "Urob backflush, kým nie je na display 'Rdy/go'",
+    title: "Urob flush, kým nie je na display 'Rdy/go'",
     description: "Daj pohár pod páku, stlač gombík káva, kým sa na displeji nezobrazí 'Rdy/go'.",
     image: "resources/step9.jpg"
   },
   {
-    title: "Urob backflush, by očko cca do 20s",
+    title: "Urob flush, by očko cca do 20s",
     description: "Daj pohár pod páku, stlač gombík káva, kým netečie voda konštantne bez pary.",
     image: "resources/step9.jpg"
   },
