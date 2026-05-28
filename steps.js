@@ -22,12 +22,12 @@ const steps = [
   },
   {
     title: "Urob backflush, kým nie je na display 'Rdy/go'",
-    description: "Vykonaj backflush, kým sa na displeji nezobrazí 'Rdy/go'.",
+    description: "Daj pohár pod páku, stlač gombík káva, kým sa na displeji nezobrazí 'Rdy/go'.",
     image: "resources/step9.jpg"
   },
   {
-    title: "Urob backflush, by očko cca 20s",
-    description: "Vykonaj backflush cez očko približne 20 sekúnd.",
+    title: "Urob backflush, by očko cca do 20s",
+    description: "Daj pohár pod páku, stlač gombík káva, kým netečie voda konštantne bez pary.",
     image: "resources/step9.jpg"
   },
   {
