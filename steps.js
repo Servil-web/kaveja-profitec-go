@@ -27,7 +27,7 @@ const steps = [
   },
   {
     title: "Urob flush, by očko cca do 20s",
-    description: "Daj pohár pod páku, stlač gombík káva, kým netečie voda konštantne bez pary.",
+    description: "Daj pohár pod páku, stlač tlačidlo káva, kým netečie voda konštantne bez pary.",
     image: "resources/step9.jpg"
   },
   {
@@ -51,7 +51,7 @@ const steps = [
     image: "resources/step13.jpg"
   },
   {
-    title: "Daj páku do hlavy a stlač tlačicu káva.",
+    title: "Daj páku do hlavy a stlač tlačidlo káva.",
     description: "Vlož páku do hlavy a stlač tlačidlo káva.",
     image: "resources/step14.jpg"
   },
